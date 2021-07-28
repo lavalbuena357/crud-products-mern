@@ -4,10 +4,7 @@ mongoose.connection.on('open', () => console.log('db connected'))
 
 async function connectDb({ host, port, dbName }) {
   const uri = `mongodb://${host}:${port}/${dbName}`
-  await mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+  await mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 }
 
 module.exports = connectDb
