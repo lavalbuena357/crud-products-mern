@@ -5,21 +5,17 @@ async function addProduct(req, res) {
   
   try {
     const { name, size, unitaryPrice, description } = req.body
-
     const newProduct = Product({name, size, unitaryPrice, description})
 
     if(req.file) {
       const { filename } = req.file
       newProduct.setImgUrl(filename)
     }
-
     const productStored =  await newProduct.save()
 
-    return res.status(201).send({productStored})
+    return res.json({productStored})
 
-  } catch (error) {
-    res.status(500).send({message: error.message})
-  }
+  } catch (error) {console.log(error)}
 }
 
 //GET PRODUCTS
@@ -28,14 +24,48 @@ async function getProducts(req, res) {
   try {
     const products = await Product.find()
 
-    res.status(201).send({products})
+    return res.json({products})
 
-  } catch (error) {
-    res.status(500).send({message: error.message})
-  }
+  } catch (error) {console.log(error)}
+}
+
+async function getProduct(req, res) {
+
+  try {
+    const product = await Product.findById(req.params.id)
+
+    return res.json(product)
+
+  } catch (error) {console.log(error)}
+}
+
+//PUT PRODUCTS
+async function updateProduct(req, res) {
+
+  try {
+    const { name, size, unitaryPrice, description } = req.body
+    const updateIdProduct = {name, size, unitaryPrice, description}
+    await Product.findByIdAndUpdate(req.params.id, updateIdProduct)
+
+    return res.json({status: 'Product Updated'})
+
+  } catch (error) {console.log(error)}
+}
+
+//DELETE PRODUCTS
+async function deleteProduct(req, res) {
+  try {
+    await Product.findByIdAndRemove(req.params.id)
+
+    return res.json({status: 'Product Deleted'})
+
+  } catch (error) {console.log(error)}
 }
 
 module.exports = {
   addProduct,
-  getProducts
+  getProducts,
+  getProduct,
+  updateProduct,
+  deleteProduct
 }
