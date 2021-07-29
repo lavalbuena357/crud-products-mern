@@ -24,7 +24,7 @@ async function getProducts(req, res) {
   try {
     const products = await Product.find()
 
-    return res.json({products})
+    return res.json(products)
 
   } catch (error) {console.log(error)}
 }
