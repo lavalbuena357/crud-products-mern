@@ -19,9 +19,9 @@ function FormNew({ postProduct, getProducts, handleAdd }) {
     setFormValues({...formValues, [name]: value})
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    postProduct({...formValues})
+    await postProduct({...formValues})
     getProducts()
     handleAdd()
   }

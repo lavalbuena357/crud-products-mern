@@ -18,6 +18,7 @@ function ProductsList({ products, deleteProduct, getProducts }) {
   }
 
   function handleUpdate() {
+    setCurrentId(products[0]._id)
     setIsOpenEdit(false)
   }
 
@@ -30,7 +31,7 @@ function ProductsList({ products, deleteProduct, getProducts }) {
             <Card.Content>
               <Content>
                 <Heading>{el.name}</Heading>
-                <Heading subtitle size={6}>Price: {el.unitaryPrice}</Heading>
+                <Heading subtitle size={6}>Price: ${Intl.NumberFormat().format(el.unitaryPrice)} COP</Heading>
                 <Heading subtitle size={6}>Size: {el.size}</Heading>
                 <p>Description: {el.description}</p>
 
@@ -59,23 +60,9 @@ function ProductsList({ products, deleteProduct, getProducts }) {
                 </Modal>
 
                 {/* DELETE  */}
-                <Button onClick={() => setIsOpenDelete(true)}>
+                <Button onClick={() => handleDelete(el._id)}>
                   <FaTrashAlt />
                 </Button>
-                <Modal show={isOpenDelete} onClose={() => setIsOpenDelete(false)} showClose={false}>
-                  <Modal.Card>
-                    <Modal.Card.Header>
-                      <Modal.Card.Title>
-                        ¿Remove this product?
-                      </Modal.Card.Title>
-                    </Modal.Card.Header>
-                    <Modal.Card.Body>
-                        <Button color='primary' onClick={() => handleDelete(el._id)}>Yes</Button>
-                        <Button onClick={() => setIsOpenDelete(false)}>No</Button>
-                    </Modal.Card.Body>
-                  </Modal.Card>
-                </Modal>
-              
               </Content>
             </Card.Content>
           </Card>

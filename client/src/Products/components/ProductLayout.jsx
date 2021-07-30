@@ -25,7 +25,7 @@ function ProductLayout({ getProducts, products }) {
     <Container>
       <Header title='Products App' />
       <AddButton onClick={() => setIsOpenAdd(true)} />
-      {isLoading && !products.length && <Loading />}
+      {isLoading && <Loading />}
       <ProductsList />
       <Modal show={isOpenAdd} onClose={() => setIsOpenAdd(false)} showClose={false}>
         <Modal.Card>
