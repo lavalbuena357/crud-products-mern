@@ -4,13 +4,13 @@ const Product = require('../../models/products')
 async function addProduct(req, res) {
   
   try {
-    const { name, size, unitaryPrice, description } = req.body
-    const newProduct = Product({name, size, unitaryPrice, description})
+    const { name, size, unitaryPrice, description, imgUrl } = req.body
+    const newProduct = new Product({name, size, unitaryPrice, description, imgUrl})
 
-    if(req.file) {
-      const { filename } = req.file
-      newProduct.setImgUrl(filename)
-    }
+    // if(req.file) {
+    //   const { filename } = req.file
+    //   newProduct.setImgUrl(filename)
+    // }
     const productStored =  await newProduct.save()
 
     return res.json({productStored})
@@ -43,11 +43,12 @@ async function getProduct(req, res) {
 async function updateProduct(req, res) {
 
   try {
-    const { name, size, unitaryPrice, description } = req.body
-    const updateIdProduct = {name, size, unitaryPrice, description}
-    await Product.findByIdAndUpdate(req.params.id, updateIdProduct)
+    const { name, size, unitaryPrice, description, imgUrl } = req.body
+    const updateIdProduct = {name, size, unitaryPrice, description, imgUrl}
+    
+    const productUpdated = await Product.findByIdAndUpdate(req.params.id, updateIdProduct)
 
-    return res.json({status: 'Product Updated'})
+    return res.json({productUpdated})
 
   } catch (error) {console.log(error)}
 }
