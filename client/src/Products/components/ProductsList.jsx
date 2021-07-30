@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { Card, Columns, Content, Heading, Button, Modal } from 'react-bulma-components'
 import { FaTrashAlt, FaRegEdit, FaRegEye } from "react-icons/fa";
 import { deleteProduct, getProducts, updateProduct } from '../../redux/actions'
@@ -8,7 +9,6 @@ import FormEdit from './FormEdit';
 function ProductsList({ products, deleteProduct, getProducts }) {
   const [ isOpenDelete, setIsOpenDelete ] = useState(false)
   const [ isOpenEdit, setIsOpenEdit ] = useState(false)
-  const [ isOpenDetail, setIsOpenDetail ] = useState(false)
   const [currentId, setCurrentId] = useState('')
 
   async function handleDelete(id) {
@@ -36,11 +36,11 @@ function ProductsList({ products, deleteProduct, getProducts }) {
                 <p>Description: {el.description}</p>
 
                 {/* DETAIL */}
-                <Button onClick={() => setIsOpenDetail(true)}>
-                  <FaRegEye />
-                </Button>
-                <Modal show={isOpenDetail} onClose={() => setIsOpenDetail(false)}>
-                </Modal>
+                <Link to={el._id} >
+                  <Button>
+                    <FaRegEye />
+                  </Button>
+                </Link>
 
                 {/* UPDATE  */}
                 <Button onClick={() => setIsOpenEdit(true)}>

@@ -1,5 +1,6 @@
 import axios from 'axios'
 export const GET_PRODUCTS = 'GET_PRODUCTS'
+export const GET_PRODUCT = 'GET_PRODUCT'
 export const POST_PRODUCT = 'POST_PRODUCT'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 export const DELETE_PRODUCT = 'DELETE_PRODUCT'
@@ -12,6 +13,18 @@ export function getProducts() {
       dispatch({
         type: GET_PRODUCTS,
         payload: products.data
+      })
+    } catch (error) {console.log(error)}
+  }
+}
+
+export function getProduct(id) {
+  return async function(dispatch) {
+    try {
+      const detail = await axios.get(`${baseUrl}/products/${id}`)
+      dispatch({
+        type: GET_PRODUCT,
+        payload: detail.data
       })
     } catch (error) {console.log(error)}
   }

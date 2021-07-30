@@ -1,7 +1,8 @@
-import { GET_PRODUCTS, UPDATE_PRODUCT } from "./actions";
+import { GET_PRODUCTS, UPDATE_PRODUCT, GET_PRODUCT } from "./actions";
 
 const initialState = {
-  products: []
+  products: [],
+  detail: null
 }
 
 
@@ -10,6 +11,10 @@ function reducer(state = initialState, action) {
     case GET_PRODUCTS:
       return {...state,
         products: action.payload
+      }
+    case GET_PRODUCT:
+      return {...state,
+        detail: action.payload
       }
     case UPDATE_PRODUCT:
       return {...state,
