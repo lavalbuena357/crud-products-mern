@@ -9,7 +9,7 @@ function ProductsList({ products, deleteProduct, getProducts }) {
   const [ isOpenDelete, setIsOpenDelete ] = useState(false)
   const [ isOpenEdit, setIsOpenEdit ] = useState(false)
   const [ isOpenDetail, setIsOpenDetail ] = useState(false)
-  const [currentId, setCurrentId] = useState(0)
+  const [currentId, setCurrentId] = useState('')
 
   async function handleDelete(id) {
     await deleteProduct(id)
