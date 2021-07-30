@@ -4,7 +4,7 @@ export const GET_PRODUCT = 'GET_PRODUCT'
 export const POST_PRODUCT = 'POST_PRODUCT'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 export const DELETE_PRODUCT = 'DELETE_PRODUCT'
-const baseUrl = 'http://localhost:3001/v1'
+const baseUrl = 'https://serene-brushlands-92800.herokuapp.com/v1'
 
 export function getProducts() {
   return async function(dispatch) {
