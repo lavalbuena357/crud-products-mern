@@ -5,7 +5,7 @@ import { updateProduct, getProducts } from '../../redux/actions'
 
 const { Field, Control, Label, Input } = Form
 
-function FormEdit({ products, updateProduct, currentId, _handleSubmit, getProducts }) {
+function FormEdit({ products, updateProduct, currentId, handleUpdate, getProducts }) {
   const update = products.filter(el => el._id === currentId)
   const [formNewValues, setFormNewValues] = useState({
     name: update[0].name,
@@ -24,7 +24,7 @@ function FormEdit({ products, updateProduct, currentId, _handleSubmit, getProduc
     e.preventDefault()
     await updateProduct(currentId, {...formNewValues})
     getProducts()
-    _handleSubmit()
+    handleUpdate()
   }
   
   return (

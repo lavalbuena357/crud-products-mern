@@ -11,17 +11,13 @@ function ProductsList({ products, deleteProduct, getProducts }) {
   const [ isOpenDetail, setIsOpenDetail ] = useState(false)
   const [currentId, setCurrentId] = useState(0)
 
-  useEffect(() => {
-    getProducts()
-  }, [])
-
   async function handleDelete(id) {
     await deleteProduct(id)
     setIsOpenDelete(false)
     getProducts()
   }
 
-  function _handleSubmit() {
+  function handleUpdate() {
     setIsOpenEdit(false)
   }
 
@@ -57,7 +53,7 @@ function ProductsList({ products, deleteProduct, getProducts }) {
                       </Modal.Card.Title>
                     </Modal.Card.Header>
                     <Modal.Card.Body>
-                      <FormEdit currentId={currentId}  _handleSubmit={_handleSubmit} />
+                      <FormEdit currentId={currentId} handleUpdate={handleUpdate} />
                     </Modal.Card.Body>
                   </Modal.Card>
                 </Modal>
