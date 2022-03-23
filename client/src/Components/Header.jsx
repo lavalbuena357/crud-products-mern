@@ -6,7 +6,7 @@ function Header(props) {
   return (
     <HeaderCtn>
       <Title>Header</Title>
-      <ThemeToggler changeTheme={props.handleThemeToggler} /> 
+      <ThemeToggler changeTheme={props.handleThemeToggler} theme={props.theme} /> 
     </HeaderCtn>
   )
 }
