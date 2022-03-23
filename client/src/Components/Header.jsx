@@ -1,13 +1,13 @@
 import React from 'react'
 import ThemeToggler from './ThemeToggler'
-import { Container, Title } from '../styles/Header'
+import { HeaderCtn, Title } from '../styles/Header'
 
 function Header(props) {
   return (
-    <Container>
+    <HeaderCtn>
       <Title>Header</Title>
       <ThemeToggler changeTheme={props.handleThemeToggler} /> 
-    </Container>
+    </HeaderCtn>
   )
 }
 
