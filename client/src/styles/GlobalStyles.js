@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle(({ theme }) => ({
     background: theme.background,
     color: theme.color,
     transition: 'color 0.3s linear, background 0.3s linear',
-    padding: '20px'
+    padding: '20px',
+    userSelect: 'none'
   }
 }))
