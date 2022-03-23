@@ -1,14 +1,35 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import Product from './Products/components/Product'
-import ProductLayout from './Products/components/ProductLayout'
+import { Routes, Route } from 'react-router-dom'
+import { GlobalStyles } from './styles/GlobalStyles'
+import { ThemeProvider } from 'styled-components'
+import useTheme from './Hooks/useTheme'
+import { darkTheme, lightTheme } from './styles/themes'
+import Home from './Pages/Home'
+import Detail from './Pages/Detail'
+import NotFound from './Pages/NotFound'
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+import { Container } from './styles/Container'
 
 function App() {
+
+  const [theme, handleThemeToggler] = useTheme()
+
+  const currentTheme = theme === 'light' ? lightTheme : darkTheme
+
   return (
-    <div>
-      <Route exact path='/' component={ProductLayout} />
-      <Route exact path='/:id' component={Product} />
-    </div>
+    <ThemeProvider theme={currentTheme}>
+      <Container>
+        <GlobalStyles />
+        <Header handleThemeToggler={handleThemeToggler} />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/detail/:id' element={<Detail />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   )
 }
 
