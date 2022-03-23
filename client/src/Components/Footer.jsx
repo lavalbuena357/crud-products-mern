@@ -1,8 +1,9 @@
 import React from 'react'
+import { FooterCtn } from '../styles/Footer'
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <FooterCtn>Footer</FooterCtn>
   )
 }
 
