@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.div({
+export const HeaderCtn = styled.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between'
