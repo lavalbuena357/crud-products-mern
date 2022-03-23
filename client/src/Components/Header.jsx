@@ -5,7 +5,7 @@ import { HeaderCtn, Title } from '../styles/Header'
 function Header(props) {
   return (
     <HeaderCtn>
-      <Title>Header</Title>
+      <Title>ToDo List App</Title>
       <ThemeToggler changeTheme={props.handleThemeToggler} theme={props.theme} /> 
     </HeaderCtn>
   )
