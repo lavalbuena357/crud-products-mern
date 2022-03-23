@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={currentTheme}>
       <Container>
         <GlobalStyles />
-        <Header handleThemeToggler={handleThemeToggler} />
+        <Header handleThemeToggler={handleThemeToggler} theme={theme} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/detail/:id' element={<Detail />} />
