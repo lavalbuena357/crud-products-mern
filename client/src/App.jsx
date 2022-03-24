@@ -17,8 +17,8 @@ function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
+      <GlobalStyles />
       <Container>
-        <GlobalStyles />
         <div>
           <Header handleThemeToggler={handleThemeToggler} theme={theme} />
           <Routes>
