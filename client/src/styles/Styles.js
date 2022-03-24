@@ -78,6 +78,7 @@ export const Cards = styled.div({
 export const Card = styled.div(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'space-between',
   maxWidth: '200px',
   margin: '10px 5px',
   padding: '10px',
@@ -93,12 +94,21 @@ export const Card = styled.div(({ theme }) => ({
   img: {
     width: '200px'
   },
-  div: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    margin: '10px 0'
-  }
 }))
+
+//BOX INFO
+export const BoxInfo = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+})
+
+//BOX BUTTONS
+export const BoxButtons = styled.div({
+  display: 'flex',
+  flexDirection: 'arrow',
+  justifyContent: 'space-around',
+  margin: '10px 0'
+})
 
 //FORM
 export const FormCtn = styled.form(({theme}) => ({
