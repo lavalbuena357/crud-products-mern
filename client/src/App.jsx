@@ -9,7 +9,7 @@ import Detail from './Pages/Detail'
 import NotFound from './Pages/NotFound'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
-import { Container } from './styles/Container'
+import { Container } from './styles/Styles'
 
 function App() {
 

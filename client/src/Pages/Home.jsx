@@ -1,9 +1,15 @@
 import React from 'react'
+import { Button } from '../styles/Styles'
 
 function Home() {
+
+  function handleClick() {
+    console.log('test')
+  }
+
   return (
     <div>
-      Home
+      <Button onClick={handleClick}>Agregar Producto</Button>
     </div>
   )
 }

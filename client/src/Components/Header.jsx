@@ -1,6 +1,6 @@
 import React from 'react'
 import ThemeToggler from './ThemeToggler'
-import { HeaderCtn, Title } from '../styles/Header'
+import { HeaderCtn, Title } from '../styles/Styles'
 
 function Header(props) {
   return (

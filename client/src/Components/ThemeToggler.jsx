@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../styles/Button'
+import { Button } from '../styles/Styles'
 import { BsSunFill, BsCloudMoon } from "react-icons/bs"
 
 function ThemeToggler(props) {

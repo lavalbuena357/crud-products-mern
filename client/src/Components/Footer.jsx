@@ -1,5 +1,5 @@
 import React from 'react'
-import { FooterCtn } from '../styles/Footer'
+import { FooterCtn } from '../styles/Styles'
 
 function Footer() {
   return (
