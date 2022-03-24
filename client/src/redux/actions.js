@@ -38,7 +38,7 @@ export function postProduct(payload) {
   }
 }
 
-export function updateProduct(id, payload) {
+export function updateProduct(payload, id) {
   return async function(dispatch) {
     try {
       await axios.put(`${url}/products/${id}`, payload)
