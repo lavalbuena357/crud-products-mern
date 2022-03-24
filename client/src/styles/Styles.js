@@ -34,12 +34,19 @@ export const HeaderCtn = styled.div({
   alignItems: 'center',
   justifyContent: 'space-between',
   padding: '20px 30px',
+  a: {
+    
+  }
 })
 
-//TITLE
-export const Title = styled.h1({
-  textTransform: 'uppercase'
-})
+// TITLE
+export const Title = styled.h1(({theme}) => ({
+  textTransform: 'uppercase',
+  a: {
+    color: theme.color,
+    textDecoration: 'none'
+  }
+}))
 
 //HOME CONTAINER
 export const HomeCtn = styled.div({
@@ -71,7 +78,7 @@ export const Card = styled.div(({ theme }) => ({
   background: theme.cardBg,
   color: theme.background,
   h2: {
-    fontWeight: '300',
+    fontWeight: '600',
     margin: '0'
   },
   p: {
