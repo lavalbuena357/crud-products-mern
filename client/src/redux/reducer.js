@@ -15,6 +15,9 @@ function reducer(state = initialState, action) {
       return {...state, products: state.products}
     case 'UPDATE_PRODUCT':
       return {...state, products: state.products}
+    case 'DELETE_PRODUCT': {
+      return {...state, products: state.products}
+    }
     default:
       return state
   }
