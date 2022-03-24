@@ -11,6 +11,7 @@ import NotFound from './Pages/NotFound'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import { Container } from './styles/Styles'
+import UpdateProduct from './Pages/UpdateProduct'
 
 function App() {
   const [theme, handleThemeToggler] = useTheme()
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/add-product' element={<AddProduct />} />
+            <Route path='/update-product/:id' element={<UpdateProduct />} />
             <Route path='/detail/:id' element={<Detail />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
