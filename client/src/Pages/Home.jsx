@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProductList from '../Components/ProductList'
-import { Button, HomeCtn } from '../styles/Styles'
+import { Button, BoxCtn } from '../styles/Styles'
 
 function Home() {
 
@@ -12,10 +12,10 @@ function Home() {
   }
 
   return (
-    <HomeCtn>
+    <BoxCtn>
       <Button onClick={handleClick}>Agregar Producto</Button>
       <ProductList />
-    </HomeCtn>
+    </BoxCtn>
   )
 }
 
