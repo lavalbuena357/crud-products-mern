@@ -1,8 +1,27 @@
 import React from 'react'
 import { BoxButton, Card, BoxButtons, BoxInfo } from '../styles/Styles'
 import { BsEyeFill, BsFillTrashFill, BsPencilSquare } from "react-icons/bs"
+import { useDispatch } from 'react-redux'
+import { deleteProduct } from '../redux/actions'
+import { useNavigate } from 'react-router-dom'
 
 function Product(props) {
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  async function handleDelete(id) {
+    await dispatch(deleteProduct(id))
+  }
+
+  function handleUpdate(id) {
+    navigate(`/update-product/${id}`)
+  }
+
+  function handleDetail(id) {
+    navigate(`/detail/${id}`)
+  }
+
   return (
     <Card>
       <BoxInfo>
@@ -13,9 +32,9 @@ function Product(props) {
         <p>Description: {props.description}</p>
       </BoxInfo>
       <BoxButtons>
-        <BoxButton><BsEyeFill /></BoxButton>
-        <BoxButton><BsPencilSquare /></BoxButton>
-        <BoxButton><BsFillTrashFill /></BoxButton>
+        <BoxButton onClick={() => handleDetail(props.id)}><BsEyeFill /></BoxButton>
+        <BoxButton onClick={() => handleUpdate(props.id)}><BsPencilSquare /></BoxButton>
+        <BoxButton onClick={() => handleDelete(props.id)}><BsFillTrashFill /></BoxButton>
       </BoxButtons>
     </Card>
   )
