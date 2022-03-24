@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Form from '../Components/Form'
+import { BoxCtn, Subtitle } from '../styles/Styles'
 
 function AddProduct() {
+  const [product, setProduct] = useState({})
+
   return (
-    <div>AddProduct</div>
+    <BoxCtn>
+      <Subtitle>Add New Product</Subtitle>
+      <Form />
+    </BoxCtn>
   )
 }
 
