@@ -12,21 +12,21 @@ import Footer from './Components/Footer'
 import { Container } from './styles/Styles'
 
 function App() {
-
   const [theme, handleThemeToggler] = useTheme()
-
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
 
   return (
     <ThemeProvider theme={currentTheme}>
       <Container>
         <GlobalStyles />
-        <Header handleThemeToggler={handleThemeToggler} theme={theme} />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/detail/:id' element={<Detail />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <div>
+          <Header handleThemeToggler={handleThemeToggler} theme={theme} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/detail/:id' element={<Detail />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </Container>
     </ThemeProvider>
