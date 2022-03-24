@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Form from '../Components/Form'
 import { BoxCtn, Subtitle } from '../styles/Styles'
 
 function AddProduct() {
-  const [product, setProduct] = useState({})
 
   return (
     <BoxCtn>
