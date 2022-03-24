@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button } from '../styles/Styles'
+import ProductList from '../Components/ProductList'
+import { Button, HomeCtn } from '../styles/Styles'
 
 function Home() {
 
@@ -8,9 +9,10 @@ function Home() {
   }
 
   return (
-    <div>
+    <HomeCtn>
       <Button onClick={handleClick}>Agregar Producto</Button>
-    </div>
+      <ProductList />
+    </HomeCtn>
   )
 }
 
