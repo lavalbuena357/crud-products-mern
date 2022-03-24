@@ -1,11 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ProductList from '../Components/ProductList'
 import { Button, HomeCtn } from '../styles/Styles'
 
 function Home() {
 
+  const navigate = useNavigate()
+
   function handleClick() {
-    console.log('test')
+    navigate('/add-product')
   }
 
   return (
