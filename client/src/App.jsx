@@ -6,6 +6,7 @@ import useTheme from './Hooks/useTheme'
 import { darkTheme, lightTheme } from './styles/themes'
 import Home from './Pages/Home'
 import Detail from './Pages/Detail'
+import AddProduct from './Pages/AddProduct'
 import NotFound from './Pages/NotFound'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
@@ -23,6 +24,7 @@ function App() {
           <Header handleThemeToggler={handleThemeToggler} theme={theme} />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/add-product' element={<AddProduct />} />
             <Route path='/detail/:id' element={<Detail />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
