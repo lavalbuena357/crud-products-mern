@@ -16,7 +16,7 @@ function ProductList() {
       await dispatch(getProducts())
       setIsLoading(false)
     })()
-  }, [])
+  }, [products])
 
   return (
     <Cards>
@@ -26,6 +26,7 @@ function ProductList() {
         products.map((el, i) => (
           <Product 
             key={i} 
+            id={el._id}
             image={el.imgUrl} 
             name={el.name}
             price={el.unitaryPrice}
