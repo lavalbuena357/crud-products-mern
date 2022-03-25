@@ -2,8 +2,15 @@ import React from 'react'
 import { FooterCtn } from '../styles/Styles'
 
 function Footer() {
+
+  function getYear() {
+    return new Date().getFullYear()
+  }
+
   return (
-    <FooterCtn>Footer</FooterCtn>
+    <FooterCtn>
+      <span>&copy;{getYear()} - Albert Valbuena</span>
+    </FooterCtn>
   )
 }
 
