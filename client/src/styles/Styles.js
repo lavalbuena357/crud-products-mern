@@ -26,6 +26,7 @@ export const Button = styled.button(({theme}) => ({
 
 export const BoxButton = styled(Button)`
    border-radius: 5px;
+   font-size: ${props => props.fontSize + 'rem'}
 `
 
 //HEADER
@@ -90,16 +91,22 @@ export const Card = styled.div(({ theme }) => ({
   },
   p: {
     margin: '0'
-  },
-  img: {
-    width: '200px'
-  },
+  }
 }))
+
+//BOX IMAGE
+export const BoxImage = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+  img: {
+    width: '200px',
+  }
+})
 
 //BOX INFO
 export const BoxInfo = styled.div({
   display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column'
 })
 
 //BOX BUTTONS
