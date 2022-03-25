@@ -197,5 +197,10 @@ export const FooterCtn = styled.div(({ theme }) => ({
   padding: '10px 0',
   marginTop: '20px'
 }))
+
+//LOADING
+export const Loading = styled.h2({
+  alignSelf: 'center'
+})
   
 

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Form from '../Components/Form'
 import { getProduct, updateProduct } from '../redux/actions'
-import { BoxCtn, Subtitle } from '../styles/Styles'
+import { BoxCtn, Loading, Subtitle } from '../styles/Styles'
 
 function UpdateProduct() {  
   const [product, setProduct] = useState(null)
@@ -27,7 +27,7 @@ function UpdateProduct() {
   return (
     <BoxCtn>
       <Subtitle>Update Product</Subtitle>
-      {(isLoading || !product) ? <p>cargando...</p>
+      {(isLoading || !product) ? <Loading>Data Loading...</Loading>
         :
       <Form 
         id={id}

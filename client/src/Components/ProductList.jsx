@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../redux/actions'
-import { Cards } from '../styles/Styles'
+import { Cards, Loading } from '../styles/Styles'
 import Product from './Product'
 
 function ProductList() {
@@ -21,7 +21,7 @@ function ProductList() {
   return (
     <Cards>
       {
-        isLoading ? <p>Cargando...</p>
+        isLoading ? <Loading>Data Loading...</Loading>
         :
         products.map((el, i) => (
           <Product 

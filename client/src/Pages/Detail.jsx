@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getProduct } from '../redux/actions'
-import { BoxCtn, BoxImage, BoxInfo, DetailBox } from '../styles/Styles'
+import { BoxCtn, BoxImage, BoxInfo, DetailBox, Loading } from '../styles/Styles'
 
 function Detail() {
   const [isLoading, setIsLoading] = useState(true)
@@ -20,7 +20,7 @@ function Detail() {
 
   return (
     <BoxCtn>
-      {isLoading ? <p>Loading...</p>
+      {isLoading ? <Loading>Data Loading...</Loading>
       :
       <DetailBox>
         <BoxImage imgSize='400'>
