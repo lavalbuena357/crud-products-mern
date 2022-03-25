@@ -25,7 +25,7 @@ function Product(props) {
   return (
     <Card>
       <div>
-        <BoxImage>
+        <BoxImage imgSize='200'>
           <img src={props.image} alt="imagen" />
         </BoxImage>
       </div>
