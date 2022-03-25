@@ -84,30 +84,31 @@ export const Card = styled.div(({ theme }) => ({
   margin: '10px 5px',
   padding: '10px',
   background: theme.cardBg,
-  color: theme.background,
-  h2: {
-    fontWeight: '600',
-    margin: '0'
-  },
-  p: {
-    margin: '0'
-  }
+  color: theme.background
 }))
 
 //BOX IMAGE
-export const BoxImage = styled.div({
+export const BoxImage = styled.div((props) => ({
   display: 'flex',
   justifyContent: 'center',
   img: {
-    width: '200px',
+    width: props.imgSize + 'px',
   }
-})
+}))
 
 //BOX INFO
-export const BoxInfo = styled.div({
+export const BoxInfo = styled.div((props) => ({
   display: 'flex',
-  flexDirection: 'column'
-})
+  flexDirection: 'column',
+  alignItems: props.align,
+  p: {
+    margin: '0'
+  },
+  h2: {
+    fontWeight: '600',
+    margin: '0'
+  }
+}))
 
 //BOX BUTTONS
 export const BoxButtons = styled.div({
@@ -175,13 +176,26 @@ export const SubmitBtn = styled.input(({theme}) => ({
   }
 }))
 
+//DETAIL
+export const DetailBox = styled.div(({theme}) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignSelf: 'center',
+  maxWidth: '500px',
+  background: theme.cardBg,
+  padding: '20px',
+  color: theme.background,
+  borderRadius: '10px'
+}))
+
 //FOOTER
 export const FooterCtn = styled.div(({ theme }) => ({
   background: theme.bottonBg,
   color: '#fff',
   display: 'flex',
   justifyContent: 'center',
-  padding: '10px 0'
+  padding: '10px 0',
+  marginTop: '20px'
 }))
   
 
