@@ -25,7 +25,7 @@ function Form(props) {
 
   return (
     <FormCtn onSubmit={handleSubmit}>
-      <BoxImage>
+      <BoxImage imgSize='200'>
         <img src={props.product.imgUrl} alt="product image" />
       </BoxImage>
       <Label>Image: </Label>
