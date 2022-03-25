@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { InputText, FormCtn, Label, SubmitBtn, TextArea } from '../styles/Styles'
+import { InputText, FormCtn, Label, SubmitBtn, TextArea, BoxButtons, BoxButton, BoxImage } from '../styles/Styles'
 
 function Form(props) {
 
@@ -19,8 +19,15 @@ function Form(props) {
     props.setProduct({...props.product, [name]: value})
   }
 
+  function handleCancel() {
+    navigate(props.route)
+  }
+
   return (
     <FormCtn onSubmit={handleSubmit}>
+      <BoxImage>
+        <img src={props.product.imgUrl} alt="product image" />
+      </BoxImage>
       <Label>Image: </Label>
       <InputText type="text" placeholder='Enter url image...' name='imgUrl' onChange={handleChange} value={props.product.imgUrl} />
       <Label>*Name: </Label>
@@ -31,7 +38,10 @@ function Form(props) {
       <InputText type="number" placeholder='Enter amount...' required name='size' onChange={handleChange} value={props.product.size} />
       <Label>Description: </Label>
       <TextArea cols="30" rows="5" placeholder='Enter description...' name='description' onChange={handleChange} value={props.product.description}></TextArea>
-      <SubmitBtn type="submit" value="Save" />
+      <BoxButtons>
+        <SubmitBtn type="submit" value="Save" />
+        <BoxButton fontSize='0.8' onClick={handleCancel}>Cancel</BoxButton>
+      </BoxButtons>
     </FormCtn>
   )
 }
